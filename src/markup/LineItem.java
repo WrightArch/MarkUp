@@ -16,25 +16,22 @@
  */
 package markup;
 
-import java.util.Scanner;
-import java.text.DecimalFormat;
-
 /**
  *
  * @author WrightArchitectural
  */
-public class MarkUp {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO Declare & instanciate LineItem object
-        
-        // TODO CLI
-        
-        // TODO Applciation logic
-        
-    }
+public class LineItem {
+    // ToDO Declare instance variables
     
+    // TODO Default constructor
+    
+    // TODO Overloaded constructor
+    
+    // TODO Accessor methods
+    
+    // TODO Mutator methods
+    
+    // TODO toString() method
+    
+    // TODO Calc method
 }
