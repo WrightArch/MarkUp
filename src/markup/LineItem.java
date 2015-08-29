@@ -21,17 +21,105 @@ package markup;
  * @author WrightArchitectural
  */
 public class LineItem {
-    // ToDO Declare instance variables
+    // Declare instance variables
+    private double liInitialValue;
+    private double percentValue;
+    private double multiplier;
+    private double markValue;
+    private double liMarked;
     
-    // TODO Default constructor
+    // Default constructor
+    public LineItem()
+    {
+        liInitialValue = 0.0;
+        percentValue = 0.0;
+        multiplier = 0.0;
+        markValue = 0.0;
+        liMarked = 0.0;
+    }
     
-    // TODO Overloaded constructor
+    // Overloaded constructor
+    public LineItem( double olLIInitialValue, double olPercentValue )
+    {
+        setLIInitialValue( olLIInitialValue );
+        setPercentValue( olPercentValue );
+    }
     
-    // TODO Accessor methods
+    // Accessor methods
+    public double getLIInitialValue()
+    {
+        return liInitialValue;
+    }
     
-    // TODO Mutator methods
+    public double getPercentValue()
+    {
+        return percentValue;
+    }
     
-    // TODO toString() method
+    public double getMultiplier()
+    {
+        return multiplier;
+    }
     
-    // TODO Calc method
+    public double getMarkValue()
+    {
+        return markValue;
+    }
+    
+    public double getLIMarked()
+    {
+        return liMarked;
+    }
+    
+    // Mutator methods
+    public void setLIInitialValue( double newLIInitialValue )
+    {
+        liInitialValue = newLIInitialValue;
+    }
+    
+    public void setPercentValue( double newPercentValue )
+    {
+        percentValue = newPercentValue;
+    }
+    
+    public void setMultiplier( double newMultiplier )
+    {
+        multiplier = newMultiplier;
+    }
+    
+    public void setMarkValue( double newMarkValue )
+    {
+        markValue = newMarkValue;
+    }
+    
+    public void setLIMarked( double newLIMarked )
+    {
+        liMarked = newLIMarked;
+    }
+    
+    // toString() method
+
+    /**
+     *
+     * @return
+     */
+        @Override
+    public String toString()
+    {
+        return "Line item initial value: " + getLIInitialValue()
+                + "; Percent value: " + getPercentValue()
+                + "; Multiplier: " + getMultiplier()
+                + "; Mark up amount: " + getMarkValue()
+                + "; Marked line item: " + getLIMarked();
+    }
+    
+    // Calc method
+    public double markupCalc()
+    {
+        multiplier = percentValue / 100;
+        markValue = liInitialValue * multiplier;
+        liMarked = markValue + liInitialValue;
+        
+        return liMarked;
+    }
 }
