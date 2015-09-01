@@ -61,7 +61,7 @@ public class MarkUp {
         System.out.println( "Line item marked: " + currencyFormat.format( li0.getLIMarked() ) );
         
         System.out.println( "----------------------------------------------------------" );
-        System.out.println( "Additional item? Enter '1' for next & '2' for terminate > " );
+        System.out.println( "Additional item? Enter '1' for next & '2' to terminate > " );
         terminationInput = scan.nextInt();
         
         terminationConditional = 2;
@@ -87,7 +87,7 @@ public class MarkUp {
             System.out.println( "Line item marked: " + currencyFormat.format( li0.getLIMarked() ) );
         
             System.out.println( "----------------------------------------------------------" );
-            System.out.println( "Additional item? Enter '1' for next & '2' for terminate > " );
+            System.out.println( "Additional item? Enter '1' for next & '2' to terminate > " );
             terminationInput = scan.nextInt();
             
         }
