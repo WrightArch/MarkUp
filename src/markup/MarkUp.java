@@ -33,6 +33,8 @@ public class MarkUp {
         LineItem li0;
         double initialValue;
         double percent;
+        int terminationInput;
+        int terminationConditional;
         
         // Formating objects
         DecimalFormat currencyFormat = new DecimalFormat( "$ #,#00.00" );
@@ -57,6 +59,40 @@ public class MarkUp {
         // CL outputs
         System.out.println( "--------------------------------------" );
         System.out.println( "Line item marked: " + currencyFormat.format( li0.getLIMarked() ) );
+        
+        System.out.println( "----------------------------------------------------------" );
+        System.out.println( "Additional item? Enter '1' for next & '2' for terminate > " );
+        terminationInput = scan.nextInt();
+        
+        terminationConditional = 2;
+        
+        while ( terminationInput != terminationConditional )
+        {
+            System.out.println( "--------------------------------------" );
+        
+            System.out.println( "Please enter initial line item cost > " );
+            initialValue = scan.nextDouble();
+            System.out.println( "Line initial value: " + currencyFormat.format( initialValue ) );
+        
+            System.out.println( "Please enter percent markup > " );
+            percent = scan.nextDouble();
+            System.out.println( "Percent markup: " + percent + " %");
+        
+            // Applciation logic
+            li0 = new LineItem( initialValue, percent );
+            li0.markupCalc();
+        
+            // CL outputs
+            System.out.println( "--------------------------------------" );
+            System.out.println( "Line item marked: " + currencyFormat.format( li0.getLIMarked() ) );
+        
+            System.out.println( "----------------------------------------------------------" );
+            System.out.println( "Additional item? Enter '1' for next & '2' for terminate > " );
+            terminationInput = scan.nextInt();
+            
+        }
+        
+        System.out.println( "Terminating ..." );
 
     }
     
